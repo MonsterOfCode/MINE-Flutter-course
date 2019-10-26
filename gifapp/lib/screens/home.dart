@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:gifapp/screens/gif.dart';
 import 'package:http/http.dart' as http;
 import 'package:share/share.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -103,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   bool userIsSearching(){
-    return textToSearch == null || textToSearch == "";
+    return textToSearch == null ||  textToSearch.isEmpty;
   }
 
   Widget _creatGifGread(BuildContext context, AsyncSnapshot snapshot){
@@ -118,7 +119,9 @@ class _HomeScreenState extends State<HomeScreen> {
         itemBuilder: (context, index){
           if(userIsSearching() || index < snapshot.data["data"].length)
             return GestureDetector(
-              child: Image.network(snapshot.data["data"][index]["images"]["fixed_height"]["url"],
+              child: FadeInImage.memoryNetwork(
+                placeholder: kTransparentImage,
+                  image: snapshot.data["data"][index]["images"]["fixed_height"]["url"],
                 height: 300.0,
                 fit: BoxFit.cover,
               ),
