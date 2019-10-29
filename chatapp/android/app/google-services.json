@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "768046314829",
+    "firebase_url": "https://fluttercoursechatapp.firebaseio.com",
+    "project_id": "fluttercoursechatapp",
+    "storage_bucket": "fluttercoursechatapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:768046314829:android:93259475763f63ac07b304",
+        "android_client_info": {
+          "package_name": "com.danymota"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "768046314829-i986o7g13qumaco2d0hct4ptb6q6a4s4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.danymota",
+            "certificate_hash": "0dc5c7f4dab6f1d101423177bcca9bf1f04604ce"
+          }
+        },
+        {
+          "client_id": "768046314829-e2qm0oe9hest479innsln2huge29n5rr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrdORI9o9Fng_lq9BiBawwT29pwry34t4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "768046314829-e2qm0oe9hest479innsln2huge29n5rr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
