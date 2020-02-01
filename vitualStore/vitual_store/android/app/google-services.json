@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "216305220801",
+    "firebase_url": "https://virtualstorefluttercourse.firebaseio.com",
+    "project_id": "virtualstorefluttercourse",
+    "storage_bucket": "virtualstorefluttercourse.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:216305220801:android:8b8cdfa14dac599a1e2840",
+        "android_client_info": {
+          "package_name": "com.danymota.vitual_store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "216305220801-nef1u3nk0amnamcpld5p8ec23dit88ka.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-sCNXdJ51e4Rj_cS6vvzV6yAc21mld9E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "216305220801-nef1u3nk0amnamcpld5p8ec23dit88ka.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
