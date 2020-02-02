@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:vitual_store/screens/login_screen.dart';
 import 'package:vitual_store/tiles/drawer_tile.dart';
 
 class CustomDrawer extends StatelessWidget {
+
+	final PageController pageController;
+
+	CustomDrawer(this.pageController);
 
   @override
   Widget build(BuildContext context) {
@@ -52,11 +57,13 @@ class CustomDrawer extends StatelessWidget {
 											    ),
 											    GestureDetector(
 												    child: Text(
-													    "Login",
+													    "Login or SignUp",
 													    style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 16.0, fontWeight: FontWeight.bold),
 												    ),
 												    onTap: (){
-
+												    	Navigator.of(context).push(
+														    MaterialPageRoute(builder: (context)=>LoginScreen())
+													    );
 												    },
 											    )
 										    ],
@@ -66,10 +73,10 @@ class CustomDrawer extends StatelessWidget {
 						    ),
 					    ),
 					    Divider(),
-					    DrawerTile(Icons.home, "Home"),
-					    DrawerTile(Icons.list, "Menu"),
-					    DrawerTile(Icons.location_on, "Restaurants"),
-					    DrawerTile(Icons.playlist_add_check, "My Orders"),
+					    DrawerTile(0, Icons.home, "Home", pageController),
+					    DrawerTile(1, Icons.list, "Menu", pageController),
+					    DrawerTile(2, Icons.location_on, "Restaurants", pageController),
+					    DrawerTile(3, Icons.playlist_add_check, "My Orders", pageController),
 				    ],
 			    )
 		    ],
