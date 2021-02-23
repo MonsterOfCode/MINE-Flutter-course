@@ -37,53 +37,58 @@ class _HomeState extends State<Home> {
               fit: BoxFit.cover,
               height: 1000,
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  "People: $_people",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 80.0),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: FlatButton(
-                        child: Text(
-                          "+1",
-                          style: TextStyle(fontSize: 40.0, color: Colors.white),
+            Container(
+              color: Colors.black.withOpacity(0.6),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    "People: $_people",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 80.0),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: FlatButton(
+                          child: Text(
+                            "+1",
+                            style:
+                                TextStyle(fontSize: 40.0, color: Colors.white),
+                          ),
+                          onPressed: () {
+                            _updatePeople(1);
+                          },
                         ),
-                        onPressed: () {
-                          _updatePeople(1);
-                        },
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: FlatButton(
-                        child: Text(
-                          "-1",
-                          style: TextStyle(fontSize: 40.0, color: Colors.white),
+                      Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: FlatButton(
+                          child: Text(
+                            "-1",
+                            style:
+                                TextStyle(fontSize: 40.0, color: Colors.white),
+                          ),
+                          onPressed: () {
+                            _updatePeople(-1);
+                          },
                         ),
-                        onPressed: () {
-                          _updatePeople(-1);
-                        },
                       ),
-                    ),
-                  ],
-                ),
-                Text(
-                  _infoText,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontStyle: FontStyle.italic,
-                      fontSize: 30.0),
-                )
-              ],
+                    ],
+                  ),
+                  Text(
+                    _infoText,
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontStyle: FontStyle.italic,
+                        fontSize: 30.0),
+                  )
+                ],
+              ),
             ),
           ],
         ));

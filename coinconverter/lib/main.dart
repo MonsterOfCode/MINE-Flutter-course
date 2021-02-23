@@ -5,14 +5,21 @@ import 'dart:convert';
 const requestUrl = "https://api.hgbrasil.com/finance?format=json&key=a313c026";
 
 void main() async {
-  runApp(MaterialApp(
+  runApp(
+    MaterialApp(
       home: Home(),
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          hintColor: Colors.white,
-          primaryColor: Colors.white,
-          inputDecorationTheme: InputDecorationTheme(
-              enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white))))));
+        hintColor: Colors.white,
+        primaryColor: Colors.white,
+        inputDecorationTheme: InputDecorationTheme(
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.white),
+          ),
+        ),
+      ),
+    ),
+  );
 }
 
 Future<Map> getCoins() async {
@@ -33,20 +40,22 @@ class _HomeState extends State<Home> {
   final dollarController = TextEditingController();
 
   // Conversions not working well, just the concept is good
-  void _bitCoinChanging(String text){
+  void _bitCoinChanging(String text) {
     double bitCoin = double.parse(text);
-    dollarController.text = (bitCoin/_dollar).toStringAsFixed(2);
-    euroController.text = (bitCoin/_euro).toStringAsFixed(2);
+    dollarController.text = (bitCoin / _dollar).toStringAsFixed(2);
+    euroController.text = (bitCoin / _euro).toStringAsFixed(2);
   }
-  void _euroChanging(String text){
+
+  void _euroChanging(String text) {
     double euro = double.parse(text);
-    dollarController.text = (euro/_dollar).toStringAsFixed(2);
-    bitCoinController.text = (euro/_bitCoin).toStringAsFixed(2);
+    dollarController.text = (euro / _dollar).toStringAsFixed(2);
+    bitCoinController.text = (euro / _bitCoin).toStringAsFixed(2);
   }
-  void _dollarChanging(String text){
+
+  void _dollarChanging(String text) {
     double dollar = double.parse(text);
-    euroController.text = (dollar/_euro).toStringAsFixed(2);
-    bitCoinController.text = (dollar/_bitCoin).toStringAsFixed(2);
+    euroController.text = (dollar / _euro).toStringAsFixed(2);
+    bitCoinController.text = (dollar / _bitCoin).toStringAsFixed(2);
   }
 
   @override
@@ -82,10 +91,11 @@ class _HomeState extends State<Home> {
                     ),
                   );
                 } else {
-                  _dollar = snapshot.data["results"]["currencies"]["USD"]["buy"];
+                  _dollar =
+                      snapshot.data["results"]["currencies"]["USD"]["buy"];
                   _euro = snapshot.data["results"]["currencies"]["EUR"]["buy"];
-                  _euro = snapshot.data["results"]["currencies"]["EUR"]["buy"];
-                  _bitCoin = snapshot.data["results"]["currencies"]["BTC"]["buy"];
+                  _bitCoin =
+                      snapshot.data["results"]["currencies"]["BTC"]["buy"];
                   return SingleChildScrollView(
                     padding: EdgeInsets.all(10.0),
                     child: Column(
@@ -93,11 +103,14 @@ class _HomeState extends State<Home> {
                       children: <Widget>[
                         Icon(Icons.monetization_on,
                             size: 150.0, color: Colors.amber),
-                        buildTextField("Bitcoin", "", bitCoinController, _bitCoinChanging),
+                        buildTextField(
+                            "Bitcoin", "", bitCoinController, _bitCoinChanging),
                         Divider(),
-                        buildTextField("Euro", "€", euroController, _euroChanging),
+                        buildTextField(
+                            "Euro", "€", euroController, _euroChanging),
                         Divider(),
-                        buildTextField("Dollar", "\$", dollarController, _dollarChanging)
+                        buildTextField(
+                            "Dollar", "\$", dollarController, _dollarChanging)
                       ],
                     ),
                   );
@@ -108,7 +121,8 @@ class _HomeState extends State<Home> {
   }
 }
 
-Widget buildTextField(String label, String sufix, TextEditingController controller, Function changehandler) {
+Widget buildTextField(String label, String sufix,
+    TextEditingController controller, Function changehandler) {
   return TextField(
     decoration: InputDecoration(
         labelText: label,
