@@ -1,6 +1,18 @@
 import 'package:flutter/material.dart';
 
 class ProductScreen extends StatelessWidget {
+  final String image;
+  final String title;
+  final String description;
+  final double price;
+
+  ProductScreen({
+    @required this.image,
+    @required this.title,
+    @required this.description,
+    @required this.price,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +28,7 @@ class ProductScreen extends StatelessWidget {
               flexibleSpace: FlexibleSpaceBar(
                 centerTitle: true,
                 background: Image.asset(
-                  "assets/product-10.png",
+                  image,
                   width: double.infinity,
                   fit: BoxFit.fitWidth,
                 ),
@@ -29,7 +41,7 @@ class ProductScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(top: 10, left: 10, right: 10),
               child: Text(
-                "Dry Fit Long Sleeve",
+                title,
                 style: TextStyle(
                   fontSize: 26,
                   fontWeight: FontWeight.bold,
@@ -38,14 +50,12 @@ class ProductScreen extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.all(10),
-              child: Text(
-                "by Nike",
-              ),
+              child: Text(description),
             ),
             Padding(
               padding: EdgeInsets.all(10),
               child: Text(
-                "Details",
+                "Price",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
@@ -53,9 +63,7 @@ class ProductScreen extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.all(10),
-              child: Text(
-                "Nike Dri-FIT is a polyester fabric designed to help you keep dry so",
-              ),
+              child: Text("€ $price"),
             )
           ],
         ),

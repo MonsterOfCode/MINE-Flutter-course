@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:layouts/screens/cart-screen.dart';
 import 'package:layouts/screens/home.screen.dart';
 import 'package:layouts/screens/login.screen.dart';
-import 'package:layouts/screens/tabs.screen.dart';
+import 'package:layouts/themes/light.theme.dart';
+import 'package:layouts/widgets/tabs.widget.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,33 +15,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: lightTheme(),
       home: DefaultTabController(
         length: 3,
-        child: Scaffold(
-          body: TabBarView(
-            children: [
-              HomeScreen(),
-              CartScreen(),
-              LoginScreen(),
-            ],
-          ),
-          bottomNavigationBar: TabBar(
-            tabs: [
-              Tab(icon: Icon(Icons.home)),
-              Tab(icon: Icon(Icons.shopping_cart)),
-              Tab(icon: Icon(Icons.perm_identity)),
-            ],
-            labelColor: Theme.of(context).primaryColor,
-            unselectedLabelColor: Colors.black38,
-            indicatorSize: TabBarIndicatorSize.label,
-            indicatorPadding: EdgeInsets.all(5),
-            indicatorColor: Theme.of(context).primaryColor,
-          ),
-        ),
+        child: TabsWidget(),
       ),
     );
   }

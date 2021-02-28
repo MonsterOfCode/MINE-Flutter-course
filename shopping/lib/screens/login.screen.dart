@@ -12,7 +12,6 @@ class LoginScreen extends StatelessWidget {
         ),
         child: SafeArea(
           child: Container(
-            color: Color(0xFFF5F5F5),
             padding: EdgeInsets.only(
               left: 20,
               right: 20,
@@ -22,7 +21,7 @@ class LoginScreen extends StatelessWidget {
                 Container(
                   height: 450,
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Theme.of(context).accentColor,
                     boxShadow: [
                       new BoxShadow(
                         color: Colors.black12,
@@ -44,14 +43,13 @@ class LoginScreen extends StatelessWidget {
                           children: [
                             Column(
                               children: [
+                                Text("Welcome",
+                                    style:
+                                        Theme.of(context).textTheme.headline3),
                                 Text(
-                                  "Welcome",
-                                  style: TextStyle(
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                                  "Sign in to continue",
+                                  style: Theme.of(context).textTheme.subtitle1,
                                 ),
-                                Text("Sign in to continue"),
                               ],
                             ),
                             FlatButton(
@@ -63,7 +61,12 @@ class LoginScreen extends StatelessWidget {
                                   ),
                                 );
                               },
-                              child: Text("Sign up"),
+                              child: Text(
+                                "Sign up",
+                                style: TextStyle(
+                                  color: Theme.of(context).primaryColor,
+                                ),
+                              ),
                             )
                           ],
                         ),
@@ -75,7 +78,7 @@ class LoginScreen extends StatelessWidget {
                           decoration: InputDecoration(
                             labelText: "Email",
                             labelStyle: TextStyle(
-                                color: Colors.black,
+                                color: Theme.of(context).primaryColor,
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400),
                           ),
@@ -92,7 +95,7 @@ class LoginScreen extends StatelessWidget {
                           decoration: InputDecoration(
                             labelText: "Password",
                             labelStyle: TextStyle(
-                                color: Colors.black,
+                                color: Theme.of(context).primaryColor,
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400),
                           ),
@@ -105,7 +108,12 @@ class LoginScreen extends StatelessWidget {
                           height: 40,
                           child: FlatButton(
                             onPressed: () {},
-                            child: Text("Forgot you password"),
+                            child: Text(
+                              "Forgot you password",
+                              style: TextStyle(
+                                color: Theme.of(context).primaryColor,
+                              ),
+                            ),
                           ),
                         ),
                         SizedBox(
@@ -114,7 +122,7 @@ class LoginScreen extends StatelessWidget {
                         Container(
                           width: double.infinity,
                           decoration: BoxDecoration(
-                            color: Colors.blue,
+                            color: Theme.of(context).primaryColor,
                             borderRadius: BorderRadius.all(
                               Radius.circular(5),
                             ),
@@ -150,7 +158,7 @@ class LoginScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     border: Border.all(
                       width: 2.0,
-                      color: Colors.blue,
+                      color: Theme.of(context).primaryColor,
                     ),
                     borderRadius: BorderRadius.all(
                       Radius.circular(5),
@@ -182,7 +190,7 @@ class LoginScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     border: Border.all(
                       width: 2.0,
-                      color: Colors.blue,
+                      color: Theme.of(context).primaryColor,
                     ),
                     borderRadius: BorderRadius.all(
                       Radius.circular(5),

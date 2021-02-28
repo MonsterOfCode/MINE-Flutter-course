@@ -35,7 +35,7 @@ class CartScreen extends StatelessWidget {
                         Text(
                           "€ 440",
                           style: TextStyle(
-                            color: Colors.blue,
+                            color: Theme.of(context).primaryColor,
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
                           ),
@@ -56,7 +56,9 @@ class CartScreen extends StatelessWidget {
                     child: FlatButton(
                       child: Text(
                         "Checkout",
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(
+                          color: Theme.of(context).accentColor,
+                        ),
                       ),
                       onPressed: null,
                     ),
@@ -117,7 +119,7 @@ Widget widgetProductCartItem(
               Text(
                 "€ 200",
                 style: TextStyle(
-                  color: Colors.blue,
+                  color: Theme.of(context).primaryColor,
                 ),
               ),
               SizedBox(height: 10),

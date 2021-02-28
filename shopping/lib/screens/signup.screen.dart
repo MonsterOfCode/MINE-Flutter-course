@@ -10,7 +10,6 @@ class SignupScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
           child: Container(
-        color: Color(0xFFF5F5F5),
         padding: EdgeInsets.only(
           left: 20,
           right: 20,
@@ -40,10 +39,7 @@ class SignupScreen extends StatelessWidget {
                       children: [
                         Text(
                           "Sigup",
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.w500,
-                          ),
+                          style: Theme.of(context).textTheme.headline3,
                         ),
                       ],
                     ),
@@ -55,7 +51,7 @@ class SignupScreen extends StatelessWidget {
                       decoration: InputDecoration(
                         labelText: "Name",
                         labelStyle: TextStyle(
-                            color: Colors.black,
+                            color: Theme.of(context).primaryColor,
                             fontSize: 16,
                             fontWeight: FontWeight.w400),
                       ),
@@ -71,7 +67,7 @@ class SignupScreen extends StatelessWidget {
                       decoration: InputDecoration(
                         labelText: "Email",
                         labelStyle: TextStyle(
-                            color: Colors.black,
+                            color: Theme.of(context).primaryColor,
                             fontSize: 16,
                             fontWeight: FontWeight.w400),
                       ),
@@ -88,7 +84,7 @@ class SignupScreen extends StatelessWidget {
                       decoration: InputDecoration(
                         labelText: "Password",
                         labelStyle: TextStyle(
-                            color: Colors.black,
+                            color: Theme.of(context).primaryColor,
                             fontSize: 16,
                             fontWeight: FontWeight.w400),
                       ),
@@ -102,7 +98,7 @@ class SignupScreen extends StatelessWidget {
                     Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: Theme.of(context).primaryColor,
                         borderRadius: BorderRadius.all(
                           Radius.circular(5),
                         ),
