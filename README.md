@@ -12,9 +12,9 @@ In this section is displayed all apps that where produced.
 
 Developed with 3 options of theme and some additional animations like on Search bar and open product
 
-<img src="gifs/shopping.gif" width="230" height="500"/>
-<img src="gifs/shoppingDarkGreen.gif" width="230" height="500"/>
-<img src="gifs/shoppingDarkYellow.gif" width="230" height="500"/>
+<img style="display: inline-block" src="gifs/shopping.gif" width="230" height="500"/>
+<img style="display: inline-block" src="gifs/shoppingDarkGreen.gif" width="230" height="500"/>
+<img style="display: inline-block;" src="gifs/shoppingDarkYellow.gif" width="230" height="500"/>
 
 #
 
