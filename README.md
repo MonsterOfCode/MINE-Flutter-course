@@ -11,10 +11,9 @@ In this section is displayed all apps that where produced.
 ### App 7 : "Shopping App"
 
 Developed with 3 options of theme and some additional animations like on Search bar and open product
-
-<img style="display: inline-block" src="gifs/shopping.gif" width="230" height="500"/>
-<img style="display: inline-block" src="gifs/shoppingDarkGreen.gif" width="230" height="500"/>
-<img style="display: inline-block;" src="gifs/shoppingDarkYellow.gif" width="230" height="500"/>
+White Theme | Dark Green theme | Dark Yellow theme
+:-------------------------:|:-------------------------:|:-------------------------:
+<img style="display: inline-block" src="gifs/shopping.gif" width="230" height="500"/> | <img style="display: inline-block" src="gifs/shoppingDarkGreen.gif" width="230" height="500"/> | <img style="display: inline-block;" src="gifs/shoppingDarkYellow.gif" width="230" height="500"/>
 
 #
 
