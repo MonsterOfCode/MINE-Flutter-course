@@ -8,6 +8,16 @@ The purpose of this repository is to collect all the applications that results o
 
 In this section is displayed all apps that where produced.
 
+### App 7 : "Shopping App"
+
+Developed with 3 options of theme and some additional animations like on Search bar and open product
+
+<img src="gifs/shopping.gif" width="230" height="500"/>
+<img src="gifs/shoppingDarkGreen.gif" width="230" height="500"/>
+<img src="gifs/shoppingDarkYellow.gif" width="230" height="500"/>
+
+#
+
 ### App 6 : "Contacts App"
 
 With local storage, the user is able to insert, edit and delete his contacts with this application
