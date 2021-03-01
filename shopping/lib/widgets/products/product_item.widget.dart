@@ -25,26 +25,28 @@ class ProductItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ProductScreen(
-                    title: title,
-                    description: description,
-                    image: image,
-                    price: price,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProductScreen(
+                      title: title,
+                      description: description,
+                      image: image,
+                      price: price,
+                    ),
                   ),
+                );
+              },
+              child: Hero(
+                tag: image,
+                child: Image.asset(
+                  image,
+                  width: 170,
+                  height: 170,
+                  fit: BoxFit.cover,
                 ),
-              );
-            },
-            child: Image.asset(
-              image,
-              width: 170,
-              height: 170,
-              fit: BoxFit.cover,
-            ),
-          ),
+              )),
           SizedBox(height: 10),
           Container(
             height: 60,
@@ -70,7 +72,7 @@ class ProductItem extends StatelessWidget {
             style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
-                color: Color(0xFF00C569)),
+                color: Theme.of(context).primaryColor),
           ),
         ],
       ),

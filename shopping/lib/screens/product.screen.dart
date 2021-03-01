@@ -26,13 +26,15 @@ class ProductScreen extends StatelessWidget {
               floating: false,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
-                centerTitle: true,
-                background: Image.asset(
-                  image,
-                  width: double.infinity,
-                  fit: BoxFit.fitWidth,
-                ),
-              ),
+                  centerTitle: true,
+                  background: Hero(
+                    tag: image,
+                    child: Image.asset(
+                      image,
+                      width: double.infinity,
+                      fit: BoxFit.fitWidth,
+                    ),
+                  )),
             ),
           ];
         },

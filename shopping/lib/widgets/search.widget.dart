@@ -1,44 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:layouts/widgets/animated_input.widget.dart';
 
-class SearchWidget extends StatelessWidget {
+class SearchWidget extends StatefulWidget {
+  @override
+  _SearchWidgetState createState() => _SearchWidgetState();
+}
+
+class _SearchWidgetState extends State<SearchWidget>
+    with SingleTickerProviderStateMixin {
+  bool menuOpened = false;
+  AnimationController _controller;
+
+  @override
+  void initState() {
+    _controller = new AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 1),
+    );
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(top: 10),
-      height: 60,
-      padding: EdgeInsets.only(left: 20),
-      decoration: BoxDecoration(
-        color: Colors.black.withOpacity(0.1),
-        borderRadius: BorderRadius.all(
-          Radius.circular(128),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        AnimatedInput(
+          controller: _controller,
         ),
-      ),
-      child: Row(
-        children: <Widget>[
-          Icon(Icons.search),
-          Flexible(
-            child: Container(
-              padding: EdgeInsets.only(left: 10),
-              child: TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  labelText: "Search...",
-                  labelStyle: TextStyle(
-                    color: Theme.of(context).primaryColor,
-                    fontWeight: FontWeight.w300,
-                    fontSize: 16,
-                  ),
-                ),
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Theme.of(context).primaryColor,
-                ),
-              ),
-            ),
+        FlatButton(
+          onPressed: () {
+            !menuOpened ? _controller.forward() : _controller.reverse();
+            menuOpened ^= true;
+          },
+          child: AnimatedIcon(
+            icon: AnimatedIcons.menu_close,
+            progress: _controller,
+            semanticLabel: "Open Menu",
           ),
-        ],
-      ),
+        )
+      ],
     );
   }
 }
