@@ -13,7 +13,7 @@ In this section is displayed all apps that where produced.
 Developed with 3 options of theme and some additional animations like on Search bar and open product
 White Theme | Dark Green theme | Dark Yellow theme
 :-------------------------:|:-------------------------:|:-------------------------:
-<img style="display: inline-block" src="gifs/shopping.gif" width="230" height="500"/> | <img style="display: inline-block" src="gifs/shoppingDarkGreen.gif" width="230" height="500"/> | <img style="display: inline-block;" src="gifs/shoppingDarkYellow.gif" width="230" height="500"/>
+<img src="gifs/shopping.gif" width="230" height="500"/> | <img src="gifs/shoppingDarkGreen.gif" width="230" height="500"/> | <img src="gifs/shoppingDarkYellow.gif" width="230" height="500"/>
 
 #
 
@@ -21,7 +21,7 @@ White Theme | Dark Green theme | Dark Yellow theme
 
 With local storage, the user is able to insert, edit and delete his contacts with this application
 
-<img style="display: block;margin-left: auto;margin-right: auto;" src="gifs/contacts.gif" width="230" height="500"/>
+<img src="gifs/contacts.gif" width="230" height="500"/>
 
 #
 
@@ -29,7 +29,7 @@ With local storage, the user is able to insert, edit and delete his contacts wit
 
 This application allows local storage, the user is able to insert your TODO task and after mark his TODOss like done or even delete them
 
-<img style="display: block;margin-left: auto;margin-right: auto;" src="gifs/TODO.gif" width="230" height="500"/>
+<img src="gifs/TODO.gif" width="230" height="500"/>
 
 #
 
@@ -37,7 +37,7 @@ This application allows local storage, the user is able to insert your TODO task
 
 This simple app has some animations and get the values of Fuel and Gas and with the price will tells the best choice
 
-<img style="display: block;margin-left: auto;margin-right: auto;" src="gifs/fuel_gas.gif" width="230" height="500"/>
+<img src="gifs/fuel_gas.gif" width="230" height="500"/>
 
 #
 
@@ -45,7 +45,7 @@ This simple app has some animations and get the values of Fuel and Gas and with 
 
 The application 3 goes to GIPHY api and get some Gif and allows the user make researches too
 
-<img style="display: block;margin-left: auto;margin-right: auto;" src="gifs/Giphy.gif" width="230" height="500"/>
+<img src="gifs/Giphy.gif" width="230" height="500"/>
 
 #
 
@@ -53,7 +53,7 @@ The application 3 goes to GIPHY api and get some Gif and allows the user make re
 
 Is an application that get by api the coin values and make the conversion between them
 
-<img style="display: block;margin-left: auto;margin-right: auto;" src="gifs/CoinConvert.gif" width="230" height="500"/>
+<img src="gifs/CoinConvert.gif" width="230" height="500"/>
 
 #
 
@@ -61,7 +61,7 @@ Is an application that get by api the coin values and make the conversion betwee
 
 This is an app that only make the calculation of the IMC by getting the weight and height by two simple inputs
 
-<img style="display: block;margin-left: auto;margin-right: auto;" src="gifs/IMC.gif" width="230" height="500"/>
+<img src="gifs/IMC.gif" width="230" height="500"/>
 
 #
 
@@ -69,6 +69,6 @@ This is an app that only make the calculation of the IMC by getting the weight a
 
 The App 0 is tha simplest app that only increments and decrements the number of people.
 
-<img style="display: block;margin-left: auto;margin-right: auto;" src="gifs/people.gif" width="230" height="500"/>
+<img src="gifs/people.gif" width="230" height="500"/>
 
 #
