@@ -1,17 +1,12 @@
 import 'package:contacts/android/widgets/details/avatar.widget.dart';
+import 'package:contacts/models/contact.model.dart';
 import 'package:flutter/material.dart';
 
 class DetailsScreen extends StatelessWidget {
-  final String image;
-  final String name;
-  final String number;
-  final String email;
+  final Contact contact;
 
   const DetailsScreen({
-    @required this.image,
-    @required this.name,
-    @required this.number,
-    @required this.email,
+    @required this.contact,
   });
 
   @override
@@ -29,27 +24,27 @@ class DetailsScreen extends StatelessWidget {
         children: [
           SizedBox(width: double.infinity, height: 10),
           AvatarWidget(
-            image: image,
+            image: contact.image,
           ),
           SizedBox(
             height: 10,
           ),
           Text(
-            name,
+            contact.name,
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
           ),
           Text(
-            number,
+            contact.phone,
             style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w400,
             ),
           ),
           Text(
-            email,
+            contact.email,
             style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w400,
@@ -106,11 +101,11 @@ class DetailsScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Strret of castel, 255",
+                  contact.address,
                   style: TextStyle(fontSize: 12),
                 ),
                 Text(
-                  "Portugal",
+                  contact.country,
                   style: TextStyle(fontSize: 12),
                 )
               ],

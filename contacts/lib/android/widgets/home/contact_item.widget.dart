@@ -1,17 +1,12 @@
 import 'package:contacts/android/screens/details.screen.dart';
+import 'package:contacts/models/contact.model.dart';
 import 'package:flutter/material.dart';
 
 class ContactItemWidget extends StatelessWidget {
-  final String image;
-  final String name;
-  final String number;
-  final String email;
+  final Contact contact;
 
   const ContactItemWidget({
-    @required this.image,
-    @required this.name,
-    @required this.number,
-    @required this.email,
+    @required this.contact,
   });
 
   @override
@@ -23,22 +18,19 @@ class ContactItemWidget extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(52),
           image: DecorationImage(
-            image: NetworkImage(image),
+            image: NetworkImage(contact.image),
           ),
         ),
       ),
-      title: Text(name),
-      subtitle: Text(number),
+      title: Text(contact.name),
+      subtitle: Text(contact.phone),
       trailing: FlatButton(
         onPressed: () {
           Navigator.push(
             context,
             MaterialPageRoute(
                 builder: (context) => DetailsScreen(
-                      image: image,
-                      name: name,
-                      number: number,
-                      email: email,
+                      contact: contact,
                     )),
           );
         },
