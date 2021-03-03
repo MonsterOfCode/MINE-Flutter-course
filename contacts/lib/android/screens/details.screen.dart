@@ -1,5 +1,8 @@
-import 'package:contacts/android/widgets/details/avatar.widget.dart';
+import 'package:contacts/android/screens/address.screen.dart';
+import 'package:contacts/android/screens/editor.screen.dart';
 import 'package:contacts/models/contact.model.dart';
+import 'package:contacts/widgets/avatar.widget.dart';
+import 'package:contacts/widgets/text_avatar.widget.dart';
 import 'package:flutter/material.dart';
 
 class DetailsScreen extends StatelessWidget {
@@ -29,27 +32,8 @@ class DetailsScreen extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          Text(
-            contact.name,
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          Text(
-            contact.phone,
-            style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-          Text(
-            contact.email,
-            style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
+          TextAvatarWidget(
+              name: contact.name, phone: contact.phone, email: contact.email),
           SizedBox(
             height: 20,
           ),
@@ -112,7 +96,15 @@ class DetailsScreen extends StatelessWidget {
             ),
             isThreeLine: true,
             trailing: FlatButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => AddressScreen(
+                            contact: contact,
+                          )),
+                );
+              },
               child: Icon(
                 Icons.pin_drop,
                 color: theme.primaryColor,
@@ -122,7 +114,23 @@ class DetailsScreen extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => EditorScreen(
+                contact: Contact(
+                    id: 0,
+                    image: "https://www.danymota.com/images/resource/user.jpg",
+                    name: "Dany Mota",
+                    phone: "910 9999 000",
+                    email: "dany*****@gmail.com",
+                    address: "Strret of castel, 255",
+                    country: "Portugal"),
+              ),
+            ),
+          );
+        },
         backgroundColor: theme.primaryColor,
         child: Icon(Icons.edit, color: theme.accentColor),
       ),

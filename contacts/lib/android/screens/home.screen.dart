@@ -1,4 +1,5 @@
 import 'package:contacts/android/screens/details.screen.dart';
+import 'package:contacts/android/screens/editor.screen.dart';
 import 'package:contacts/android/widgets/home/contacts_list.widget.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,12 @@ class HomeScreen extends StatelessWidget {
       ),
       body: ContactsListWidget(),
       floatingActionButton: FloatingActionButton(
-        onPressed: null,
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => EditorScreen()),
+          );
+        },
         child: Icon(
           Icons.add,
           color: Theme.of(context).accentColor,

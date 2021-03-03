@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:contacts/ios/styles.dart';
+import 'package:flutter/widgets.dart';
 
 class AvatarWidget extends StatelessWidget {
   final String image;
@@ -16,12 +17,10 @@ class AvatarWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(200),
         border: Border.all(
           width: 10,
-          color: Theme.of(context).primaryColor.withOpacity(0.1),
+          color: primaryColor.withOpacity(0.1),
         ),
       ),
       child: Container(
-        width: 100,
-        height: 100,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(100),
           image: DecorationImage(

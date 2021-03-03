@@ -1,5 +1,7 @@
+import 'package:contacts/ios/screens/home.screen.dart';
+import 'package:contacts/ios/screens/splash.screen.dart';
+import 'package:contacts/ios/styles.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class IOSApp extends StatelessWidget {
   @override
@@ -7,8 +9,9 @@ class IOSApp extends StatelessWidget {
     return CupertinoApp(
       title: 'Contacts',
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(child: Text("ok")),
+      theme: iosTheme(),
+      home: CupertinoPageScaffold(
+        child: HomeScreen(),
       ),
     );
   }
