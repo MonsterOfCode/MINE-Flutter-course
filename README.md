@@ -8,6 +8,16 @@ The purpose of this repository is to collect all the applications that results o
 
 In this section is displayed all apps that where produced.
 
+### App 8 : "Contact App"
+
+The propose of this app is implement native widgets in each platform
+
+|                            Android                            |                            iOS                            |
+| :-----------------------------------------------------------: | :-------------------------------------------------------: |
+| <img src="gifs/contactAndroid.gif" width="230" height="500"/> | <img src="gifs/contactiOS.gif" width="230" height="500"/> |
+
+#
+
 ### App 7 : "Shopping App"
 
 Developed with 3 options of theme and some additional animations like on Search bar and open product
