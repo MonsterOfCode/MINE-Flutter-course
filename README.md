@@ -7,7 +7,15 @@ The purpose of this repository is to collect all the applications that results o
 ## Produced Apps
 
 In this section is displayed all apps that where produced.
+### App 9 : "IMC App"
 
+Simple app to starting with BLOC
+
+|                            Android                            |                            iOS                            |
+| :-----------------------------------------------------------: | :-------------------------------------------------------: |
+| <img src="gifs/imcBloacAndroid.gif" width="230" height="500"/> | <img src="gifs/imcBloaciOS.gif" width="230" height="500"/> |
+
+#
 ### App 8 : "Contact App"
 
 The propose of this app is implement native widgets in each platform
