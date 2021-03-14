@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:imc/blocs/imc.bloc.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -11,27 +11,23 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Check you IMC"),
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text("Check Your IMC"),
       ),
-      body: SafeArea(
+      child: SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.only(left: 8.0, right: 8.0),
           child: Column(
             children: [
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: "Heigth (cm)",
-                ),
+              CupertinoTextField(
+                placeholder: "Heigth (cm)",
                 keyboardType: TextInputType.number,
                 controller: bloc.heightCtrl,
               ),
               SizedBox(height: 15),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: "Weight (Kg)",
-                ),
+              CupertinoTextField(
+                placeholder: "Weight (Kg)",
                 keyboardType: TextInputType.number,
                 controller: bloc.weightCtrl,
               ),
@@ -41,9 +37,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 50),
-              FlatButton(
-                  color: Theme.of(context).primaryColor,
-                  minWidth: double.infinity,
+              Container(
+                width: double.infinity,
+                child: CupertinoButton.filled(
                   onPressed: () {
                     setState(() {
                       bloc.calculate();
@@ -51,8 +47,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                   child: Text(
                     "Calculate",
-                    style: TextStyle(color: Colors.white),
-                  ))
+                  ),
+                ),
+              ),
             ],
           ),
         ),
