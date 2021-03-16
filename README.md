@@ -7,6 +7,15 @@ The purpose of this repository is to collect all the applications that results o
 ## Produced Apps
 
 In this section is displayed all apps that where produced.
+### App 10 : "Perfect Eggs"
+
+Simple app that use Bloc and Provider to share the state between the Widgets and implements animations (.flr)
+
+|                            Android                            |                            iOS                            |
+| :-----------------------------------------------------------: | :-------------------------------------------------------: |
+| <img src="gifs/eggsAnimationAndroid.gif" width="230" height="500"/> | <img src="gifs/eggsAnimationiOS.gif" width="230" height="500"/> |
+
+#
 ### App 9 : "IMC App"
 
 Simple app to starting with BLOC
