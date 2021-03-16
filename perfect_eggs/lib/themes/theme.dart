@@ -7,6 +7,11 @@ const accentColor = const Color(0xFFFFFFFF);
 ThemeData appTheme() {
   return ThemeData(
     brightness: brightness,
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+        primary: accentColor,
+      ),
+    ),
     textTheme: new TextTheme(
       bodyText1: TextStyle(
         fontFamily: "Montserrat",

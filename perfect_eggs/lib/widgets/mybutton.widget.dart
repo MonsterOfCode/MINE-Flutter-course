@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Button extends StatelessWidget {
+class MyButton extends StatelessWidget {
   final String label;
   final bool selected;
   final Function callback;
 
-  Button({
+  MyButton({
     required this.label,
     required this.callback,
     this.selected = false,
@@ -19,13 +19,10 @@ class Button extends StatelessWidget {
       decoration: BoxDecoration(
         color: selected ? Theme.of(context).primaryColor : Colors.transparent,
         borderRadius: BorderRadius.circular(30),
-        border: Border.all(
-          width: 1,
-          color: Theme.of(context).primaryColor,
-        ),
+        border: Border.all(width: 1, color: Theme.of(context).primaryColor),
       ),
-      child: FlatButton(
-        onPressed: callback,
+      child: TextButton(
+        onPressed: () => callback(),
         child: Text(
           label,
           style: TextStyle(
