@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:shopping2/models/cart_item.model.dart';
 
 class CartBloc extends ChangeNotifier {
-  var cart = new List<CartItemModel>.empty();
+  var cart = new List<CartItemModel>.empty(growable: true);
   double total = 0;
 
   get() {

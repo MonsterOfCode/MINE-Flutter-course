@@ -48,7 +48,7 @@ class UserBloc extends ChangeNotifier {
 
   logout() async {
     var prefs = await SharedPreferences.getInstance();
-    await prefs.setString('user', null);
+    await prefs.setString('user', "");
     user = null;
     notifyListeners();
   }
@@ -56,7 +56,7 @@ class UserBloc extends ChangeNotifier {
   Future loadUser() async {
     var prefs = await SharedPreferences.getInstance();
     var userData = prefs.getString('user');
-    if (userData != null) {
+    if (userData != "") {
       var res = UserModel.fromJson(jsonDecode(userData));
       Settings.user = res;
       user = res;
