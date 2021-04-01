@@ -7,24 +7,43 @@ The purpose of this repository is to collect all the applications that results o
 ## Produced Apps
 
 In this section is displayed all apps that where produced.
+
+### App 12 : "Personal Trainer App"
+
+Simple and static app just to test and implement SliverList
+
+| <img src="gifs/ptApp.gif" width="230" height="500"/>
+
+#
+
+### App 11 : "TODO App with draggable list"
+
+Simple and static app just to implement a draggable list
+
+| <img src="gifs/todoUI.gif" width="230" height="500"/>
+
+#
+
 ### App 10 : "Perfect Eggs"
 
 Simple app that use Bloc and Provider to share the state between the Widgets and implements animations (.flr)
 
-|                            Android                            |                            iOS                            |
-| :-----------------------------------------------------------: | :-------------------------------------------------------: |
+|                               Android                               |                               iOS                               |
+| :-----------------------------------------------------------------: | :-------------------------------------------------------------: |
 | <img src="gifs/eggsAnimationAndroid.gif" width="230" height="500"/> | <img src="gifs/eggsAnimationiOS.gif" width="230" height="500"/> |
 
 #
+
 ### App 9 : "IMC App"
 
 Simple app to starting with BLOC
 
-|                            Android                            |                            iOS                            |
-| :-----------------------------------------------------------: | :-------------------------------------------------------: |
+|                            Android                             |                            iOS                             |
+| :------------------------------------------------------------: | :--------------------------------------------------------: |
 | <img src="gifs/imcBloacAndroid.gif" width="230" height="500"/> | <img src="gifs/imcBloaciOS.gif" width="230" height="500"/> |
 
 #
+
 ### App 8 : "Contact App"
 
 The propose of this app is implement native widgets in each platform
