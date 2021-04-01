@@ -39,6 +39,7 @@ class HomeScreen extends StatelessWidget {
                   clipBehavior: Clip.none,
                   children: [
                     Container(
+                      clipBehavior: Clip.antiAlias,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
