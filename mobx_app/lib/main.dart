@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobx_app/screens/home.screen.dart';
+import 'package:mobx_app/screens/login_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      home: LoginScreen(),
     );
   }
 }
