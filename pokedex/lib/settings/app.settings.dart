@@ -1,4 +1,4 @@
-class AppConsts {
+class AppSettings {
   static const assetImageBgWhite = "assets/images/pokeball.png";
   static const assetImageBgBlack = "assets/images/pokeball_dark.png";
 }
