@@ -23,13 +23,13 @@ mixin _$LoginStore on _LoginStoreBase, Store {
       (_$isPasswordValidComputed ??= Computed<bool>(() => super.isPasswordValid,
               name: '_LoginStoreBase.isPasswordValid'))
           .value;
-  Computed<bool>? _$isFormValidComputed;
+  Computed<void Function()>? _$loginPressedComputed;
 
   @override
-  bool get isFormValid =>
-      (_$isFormValidComputed ??= Computed<bool>(() => super.isFormValid,
-              name: '_LoginStoreBase.isFormValid'))
-          .value;
+  void Function() get loginPressed => (_$loginPressedComputed ??=
+          Computed<void Function()>(() => super.loginPressed,
+              name: '_LoginStoreBase.loginPressed'))
+      .value;
 
   final _$emailAtom = Atom(name: '_LoginStoreBase.email');
 
@@ -61,6 +61,43 @@ mixin _$LoginStore on _LoginStoreBase, Store {
     });
   }
 
+  final _$passwordVisibleAtom = Atom(name: '_LoginStoreBase.passwordVisible');
+
+  @override
+  bool get passwordVisible {
+    _$passwordVisibleAtom.reportRead();
+    return super.passwordVisible;
+  }
+
+  @override
+  set passwordVisible(bool value) {
+    _$passwordVisibleAtom.reportWrite(value, super.passwordVisible, () {
+      super.passwordVisible = value;
+    });
+  }
+
+  final _$loadingAtom = Atom(name: '_LoginStoreBase.loading');
+
+  @override
+  bool get loading {
+    _$loadingAtom.reportRead();
+    return super.loading;
+  }
+
+  @override
+  set loading(bool value) {
+    _$loadingAtom.reportWrite(value, super.loading, () {
+      super.loading = value;
+    });
+  }
+
+  final _$loginAsyncAction = AsyncAction('_LoginStoreBase.login');
+
+  @override
+  Future<void> login() {
+    return _$loginAsyncAction.run(() => super.login());
+  }
+
   final _$_LoginStoreBaseActionController =
       ActionController(name: '_LoginStoreBase');
 
@@ -87,13 +124,26 @@ mixin _$LoginStore on _LoginStoreBase, Store {
   }
 
   @override
+  void togglePasswordVisibility() {
+    final _$actionInfo = _$_LoginStoreBaseActionController.startAction(
+        name: '_LoginStoreBase.togglePasswordVisibility');
+    try {
+      return super.togglePasswordVisibility();
+    } finally {
+      _$_LoginStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 email: ${email},
 password: ${password},
+passwordVisible: ${passwordVisible},
+loading: ${loading},
 isEmailValid: ${isEmailValid},
 isPasswordValid: ${isPasswordValid},
-isFormValid: ${isFormValid}
+loginPressed: ${loginPressed}
     ''';
   }
 }

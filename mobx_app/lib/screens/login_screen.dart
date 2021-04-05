@@ -31,26 +31,30 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    CustomTextField(
-                      hint: 'Email',
-                      prefix: Icon(Icons.account_circle),
-                      textInputType: TextInputType.emailAddress,
-                      onChanged: store.setEmail,
-                      enabled: true,
+                    Observer(
+                      builder: (_) => CustomTextField(
+                        hint: 'Email',
+                        prefix: Icon(Icons.account_circle),
+                        textInputType: TextInputType.emailAddress,
+                        onChanged: store.setEmail,
+                        enabled: !store.loading,
+                      ),
                     ),
                     const SizedBox(
                       height: 16,
                     ),
-                    CustomTextField(
-                      hint: 'Password',
-                      prefix: Icon(Icons.lock),
-                      obscure: true,
-                      onChanged: store.setPassword,
-                      enabled: true,
-                      suffix: CustomIconButton(
-                        radius: 32,
-                        iconData: Icons.visibility,
-                        onTap: () {},
+                    Observer(
+                      builder: (_) => CustomTextField(
+                        hint: 'Password',
+                        prefix: Icon(Icons.lock),
+                        obscure: !store.passwordVisible,
+                        onChanged: store.setPassword,
+                        enabled: !store.loading,
+                        suffix: CustomIconButton(
+                          radius: 32,
+                          iconData: store.passwordVisible ? Icons.visibility_off : Icons.visibility,
+                          onTap: store.togglePasswordVisibility,
+                        ),
                       ),
                     ),
                     const SizedBox(
@@ -71,15 +75,15 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                               ),
                             ),
-                            child: Text(
-                              'Login',
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            onPressed: store.isFormValid
-                                ? () {
-                                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => ListScreen()));
-                                  }
-                                : null,
+                            child: store.loading
+                                ? CircularProgressIndicator(
+                                    valueColor: AlwaysStoppedAnimation(Colors.white),
+                                  )
+                                : Text(
+                                    'Login',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                            onPressed: store.loginPressed,
                           );
                         },
                       ),
