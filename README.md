@@ -8,6 +8,14 @@ The purpose of this repository is to collect all the applications that results o
 
 In this section is displayed all apps that where produced.
 
+### App 13 : "Todos App"
+
+A simple app to implement mobx with provider
+
+| <img src="gifs/todoMobx.gif" width="230" height="500"/>
+
+#
+
 ### App 12 : "Personal Trainer App"
 
 Simple and static app just to test and implement SliverList
