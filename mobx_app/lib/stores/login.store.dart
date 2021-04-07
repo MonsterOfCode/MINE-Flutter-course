@@ -30,6 +30,8 @@ abstract class _LoginStoreBase with Store {
     await Future.delayed(Duration(seconds: 2));
     loading = false;
     loggedIn = true;
+    email = "";
+    password = "";
   }
 
   @computed
@@ -40,4 +42,9 @@ abstract class _LoginStoreBase with Store {
 
   @computed
   void Function() get loginPressed => (isEmailValid && isPasswordValid && !loading) ? login : null;
+
+  @action
+  void logout() {
+    loggedIn = false;
+  }
 }

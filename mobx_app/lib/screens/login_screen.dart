@@ -5,6 +5,7 @@ import 'package:mobx_app/screens/list_screen.dart';
 import 'package:mobx_app/stores/login.store.dart';
 import 'package:mobx_app/widgets/custom_icon_button.dart';
 import 'package:mobx_app/widgets/custom_text_field.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -12,12 +13,15 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  LoginStore store = LoginStore();
+  LoginStore store;
   ReactionDisposer disposer;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+
+    store = Provider.of<LoginStore>(context);
+
     disposer = autorun((_) {
       if (store.loggedIn) Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => ListScreen()));
     });
