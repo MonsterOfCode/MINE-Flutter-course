@@ -9,21 +9,21 @@ part of 'login.store.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$LoginStore on _LoginStoreBase, Store {
-  Computed<bool>? _$isEmailValidComputed;
+  Computed<bool> _$isEmailValidComputed;
 
   @override
   bool get isEmailValid =>
       (_$isEmailValidComputed ??= Computed<bool>(() => super.isEmailValid,
               name: '_LoginStoreBase.isEmailValid'))
           .value;
-  Computed<bool>? _$isPasswordValidComputed;
+  Computed<bool> _$isPasswordValidComputed;
 
   @override
   bool get isPasswordValid =>
       (_$isPasswordValidComputed ??= Computed<bool>(() => super.isPasswordValid,
               name: '_LoginStoreBase.isPasswordValid'))
           .value;
-  Computed<void Function()>? _$loginPressedComputed;
+  Computed<void Function()> _$loginPressedComputed;
 
   @override
   void Function() get loginPressed => (_$loginPressedComputed ??=
@@ -91,6 +91,21 @@ mixin _$LoginStore on _LoginStoreBase, Store {
     });
   }
 
+  final _$loggedInAtom = Atom(name: '_LoginStoreBase.loggedIn');
+
+  @override
+  bool get loggedIn {
+    _$loggedInAtom.reportRead();
+    return super.loggedIn;
+  }
+
+  @override
+  set loggedIn(bool value) {
+    _$loggedInAtom.reportWrite(value, super.loggedIn, () {
+      super.loggedIn = value;
+    });
+  }
+
   final _$loginAsyncAction = AsyncAction('_LoginStoreBase.login');
 
   @override
@@ -141,6 +156,7 @@ email: ${email},
 password: ${password},
 passwordVisible: ${passwordVisible},
 loading: ${loading},
+loggedIn: ${loggedIn},
 isEmailValid: ${isEmailValid},
 isPasswordValid: ${isPasswordValid},
 loginPressed: ${loginPressed}

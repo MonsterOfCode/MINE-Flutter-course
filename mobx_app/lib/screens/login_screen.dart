@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:mobx/mobx.dart';
+import 'package:mobx_app/screens/list_screen.dart';
 import 'package:mobx_app/stores/login.store.dart';
 import 'package:mobx_app/widgets/custom_icon_button.dart';
 import 'package:mobx_app/widgets/custom_text_field.dart';
-
-import 'list_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -13,6 +13,14 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   LoginStore store = LoginStore();
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    autorun((_) {
+      if (store.loggedIn) Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => ListScreen()));
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           return ElevatedButton(
                             style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.resolveWith<Color>((Set<MaterialState> states) {
-                                return states.contains(MaterialState.disabled) ? Theme.of(context).primaryColor.withAlpha(100) : Theme.of(context).primaryColor;
+                                return states.contains(MaterialState.disabled) ? Theme.of(context).primaryColor.withAlpha(100) : null;
                               }),
                               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(

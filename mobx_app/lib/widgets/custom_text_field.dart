@@ -12,14 +12,14 @@ class CustomTextField extends StatelessWidget {
     this.controller,
   });
 
-  final TextEditingController? controller;
-  final String? hint;
-  final Widget? prefix;
-  final Widget? suffix;
+  final TextEditingController controller;
+  final String hint;
+  final Widget prefix;
+  final Widget suffix;
   final bool obscure;
-  final TextInputType? textInputType;
-  final Function(String)? onChanged;
-  final bool? enabled;
+  final TextInputType textInputType;
+  final Function(String) onChanged;
+  final bool enabled;
 
   @override
   Widget build(BuildContext context) {
