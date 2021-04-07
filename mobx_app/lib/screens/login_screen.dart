@@ -13,14 +13,13 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   LoginStore store = LoginStore();
-
   ReactionDisposer disposer;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    disposer = reaction((_) => store.loggedIn, (loggedIn) {
-      if (loggedIn) Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => ListScreen()));
+    disposer = autorun((_) {
+      if (store.loggedIn) Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => ListScreen()));
     });
   }
 
