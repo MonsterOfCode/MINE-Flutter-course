@@ -5,9 +5,11 @@ class HomeScreen extends StatelessWidget {
   final PageController pageController = PageController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: DrawerWidget(),
-      appBar: AppBar(),
+    return SafeArea(
+      child: Scaffold(
+        drawer: DrawerWidget(),
+        appBar: AppBar(),
+      ),
     );
   }
 }
