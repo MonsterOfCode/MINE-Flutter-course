@@ -1,13 +1,15 @@
+import 'package:get_it/get_it.dart';
 import 'package:olx_clone/business_logic/helpers/extensions.dart';
 import 'package:mobx/mobx.dart';
 import 'package:olx_clone/business_logic/repositories/user.repository.dart';
+import 'package:olx_clone/business_logic/stores/user.manager.store.dart';
 part 'login.store.g.dart';
 
 class LoginStore = _LoginStoreBase with _$LoginStore;
 
 abstract class _LoginStoreBase with Store {
   @observable
-  String email;
+  String email = "test@test.com";
 
   @action
   void setEmail(String value) => email = value;
@@ -23,7 +25,7 @@ abstract class _LoginStoreBase with Store {
   }
 
   @observable
-  String password;
+  String password = "123123123";
 
   @action
   void setPassword(String value) => password = value;
@@ -55,7 +57,7 @@ abstract class _LoginStoreBase with Store {
 
     try {
       final resultUser = await UserRepository().loginWithEmail(email, password);
-      print(resultUser);
+      GetIt.I<UserManagerStore>().setUser(resultUser);
     } catch (e) {
       error = e;
     }

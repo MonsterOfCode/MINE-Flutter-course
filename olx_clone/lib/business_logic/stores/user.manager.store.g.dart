@@ -9,6 +9,14 @@ part of 'user.manager.store.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$UserManagerStore on _UserManagerStoreBase, Store {
+  Computed<bool> _$isLoggedInComputed;
+
+  @override
+  bool get isLoggedIn =>
+      (_$isLoggedInComputed ??= Computed<bool>(() => super.isLoggedIn,
+              name: '_UserManagerStoreBase.isLoggedIn'))
+          .value;
+
   final _$userAtom = Atom(name: '_UserManagerStoreBase.user');
 
   @override
@@ -41,7 +49,8 @@ mixin _$UserManagerStore on _UserManagerStoreBase, Store {
   @override
   String toString() {
     return '''
-user: ${user}
+user: ${user},
+isLoggedIn: ${isLoggedIn}
     ''';
   }
 }

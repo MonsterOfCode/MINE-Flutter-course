@@ -1,7 +1,9 @@
+import 'package:get_it/get_it.dart';
 import 'package:mobx/mobx.dart';
 import 'package:olx_clone/business_logic/helpers/extensions.dart';
 import 'package:olx_clone/business_logic/models/user.model.dart';
 import 'package:olx_clone/business_logic/repositories/user.repository.dart';
+import 'package:olx_clone/business_logic/stores/user.manager.store.dart';
 part 'signup.store.g.dart';
 
 class SignupStore = _SignupStoreBase with _$SignupStore;
@@ -111,7 +113,7 @@ abstract class _SignupStoreBase with Store {
 
     try {
       final resultUser = await UserRepository().signup(user);
-      print(resultUser);
+      GetIt.I<UserManagerStore>().setUser(resultUser);
     } catch (e) {
       error = e;
     }
