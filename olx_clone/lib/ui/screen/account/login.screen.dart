@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:olx_clone/business_logic/stores/login.store.dart';
+import 'package:olx_clone/business_logic/stores/account/login.store.dart';
 import 'package:olx_clone/ui/screen/account/signup.screen.dart';
 import 'package:olx_clone/ui/widgets/authentication/authentication_button.widget.dart';
 import 'package:olx_clone/ui/widgets/error_box.repository.dart';

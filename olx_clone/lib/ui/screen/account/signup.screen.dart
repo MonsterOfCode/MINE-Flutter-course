@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:olx_clone/business_logic/stores/signup.store.dart';
+import 'package:olx_clone/business_logic/stores/account/signup.store.dart';
 import 'package:olx_clone/ui/widgets/authentication/authentication_button.widget.dart';
 import 'package:olx_clone/ui/widgets/authentication/field_title.widget.dart';
 import 'package:olx_clone/ui/widgets/error_box.repository.dart';
