@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:olx_clone/widgets/drawer/drawer.widget.dart';
+import 'package:olx_clone/ui/widgets/drawer/drawer.widget.dart';
 
 class HomeScreen extends StatelessWidget {
   final PageController pageController = PageController();

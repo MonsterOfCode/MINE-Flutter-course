@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'package:olx_clone/stores/screen.store.dart';
-import 'package:olx_clone/widgets/drawer/drawer_item.widget.dart';
+import 'package:olx_clone/business_logic/stores/screen.store.dart';
+import 'package:olx_clone/ui/widgets/drawer/drawer_item.widget.dart';
 
 class DrawerScreensSectionWidget extends StatelessWidget {
   final ScreenStore store = GetIt.I<ScreenStore>();

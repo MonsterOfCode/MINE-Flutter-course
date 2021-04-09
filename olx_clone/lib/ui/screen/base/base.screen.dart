@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mobx/mobx.dart';
-import 'package:olx_clone/screen/home/home.screen.dart';
-import 'package:olx_clone/stores/screen.store.dart';
+import 'package:olx_clone/ui/screen/home/home.screen.dart';
+import 'package:olx_clone/business_logic/stores/screen.store.dart';
 
 class BaseScreen extends StatefulWidget {
   @override

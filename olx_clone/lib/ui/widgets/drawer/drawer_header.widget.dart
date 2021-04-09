@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:olx_clone/screen/account/login.screen.dart';
+import 'package:olx_clone/ui/screen/account/login.screen.dart';
 
 class DrawerHeaderWidget extends StatelessWidget {
   @override

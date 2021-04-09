@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 class AuthenticationButtonWidget extends StatelessWidget {
   final String title;
-  const AuthenticationButtonWidget({Key key, @required this.title}) : super(key: key);
+  final Function onPressed;
+  bool loading;
+  AuthenticationButtonWidget({Key key, @required this.title, @required this.onPressed, this.loading = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +21,12 @@ class AuthenticationButtonWidget extends StatelessWidget {
             ),
           ),
         ),
-        child: false
+        child: loading
             ? CircularProgressIndicator(
                 valueColor: AlwaysStoppedAnimation(Colors.white),
               )
             : Text("$title"),
-        onPressed: () {},
+        onPressed: onPressed,
       ),
     );
   }

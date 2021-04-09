@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:olx_clone/widgets/drawer/drawer_header.widget.dart';
-import 'package:olx_clone/widgets/drawer/drawer_screen_section.widget.dart';
+import 'package:olx_clone/ui/widgets/drawer/drawer_header.widget.dart';
+import 'package:olx_clone/ui/widgets/drawer/drawer_screen_section.widget.dart';
 
 class DrawerWidget extends StatelessWidget {
   @override
