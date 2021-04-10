@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:olx_clone/business_logic/stores/category.store.dart';
 import 'package:olx_clone/business_logic/stores/user.manager.store.dart';
 import 'package:olx_clone/ui/screen/base/base.screen.dart';
 import 'package:olx_clone/business_logic/stores/screen.store.dart';
@@ -16,6 +17,7 @@ void main() async {
 void setupLocators() {
   GetIt.I.registerSingleton(ScreenStore());
   GetIt.I.registerSingleton(UserManagerStore());
+  GetIt.I.registerSingleton(CategoryStore());
 }
 
 Future<void> initializeParseServer() async {

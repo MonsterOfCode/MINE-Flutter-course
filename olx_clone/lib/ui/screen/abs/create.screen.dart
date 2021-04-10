@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:olx_clone/business_logic/stores/ad/create.ad.store.dart';
+import 'package:olx_clone/ui/widgets/ad/images.field.widget.dart';
+import 'package:olx_clone/ui/widgets/category/category.field.widget.dart';
 import 'package:olx_clone/ui/widgets/drawer/drawer.widget.dart';
 
 class CreateAbScreen extends StatelessWidget {
+  final CreateAdStore store = CreateAdStore();
+
   @override
   Widget build(BuildContext context) {
     const contentPadding = EdgeInsets.fromLTRB(16, 10, 12, 10);
@@ -14,12 +19,14 @@ class CreateAbScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: Card(
+        clipBehavior: Clip.antiAlias,
         margin: const EdgeInsets.symmetric(horizontal: 16),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         elevation: 8,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            ImagesFieldWidget(store: store),
             TextField(
               decoration: InputDecoration(
                 labelText: "Title *",
@@ -35,13 +42,7 @@ class CreateAbScreen extends StatelessWidget {
               ),
               maxLines: null,
             ),
-            TextField(
-              decoration: InputDecoration(
-                labelText: "Category *",
-                labelStyle: labelStyle,
-                contentPadding: contentPadding,
-              ),
-            ),
+            CategoryFieldWidget(store: store),
             TextField(
               decoration: InputDecoration(
                 labelText: "Nif *",

@@ -32,7 +32,7 @@ class SignUpScreen extends StatelessWidget {
                     Observer(
                         builder: (_) => Padding(
                               padding: const EdgeInsets.symmetric(vertical: 8.0),
-                              child: ErrorBoxRepository(message: store.error),
+                              child: ErrorBoxWidget(message: store.error),
                             )),
                     FieldTitleWidget(
                       title: "Name",
